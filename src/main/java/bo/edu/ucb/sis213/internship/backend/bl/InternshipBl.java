@@ -1,6 +1,7 @@
 package bo.edu.ucb.sis213.internship.backend.bl;
 
 import bo.edu.ucb.sis213.internship.backend.dao.InternshipRepository;
+import bo.edu.ucb.sis213.internship.backend.entity.Company;
 import bo.edu.ucb.sis213.internship.backend.entity.Internship;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -18,5 +19,9 @@ public class InternshipBl {
     }
     public List<Internship> findAll() {
         return internshipRepository.findAll();
+    }
+
+    public List<Internship> findByCompanyId(Long companyId) {
+        return internshipRepository.finaAllByCompanyId(companyId);
     }
 }

@@ -32,6 +32,7 @@ public class Company {
     @Column(name = "status", nullable = false)
     private Boolean status;
 
+    @Version
     @Column(name = "version", nullable = false)
     private Integer version;
 

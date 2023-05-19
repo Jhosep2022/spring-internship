@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -58,5 +59,13 @@ class BackendApplicationTests {
 		assertNotNull(newInternship, "No se pudo crear la pasantía");
 		assertNotNull(newInternship.getInternshipId(), "La llave primaria es nula");
 	}
+
+	@Test
+	public void findByCompanyId(){
+		List<Internship> internshipList = internshipBl.findByCompanyId(1L);
+		assertNotNull(internshipList, "La lista de pasantías es nula");
+		assertTrue(internshipList.size() > 0, "La lista de pasantías está vacía");
+	}
+
 
 }
